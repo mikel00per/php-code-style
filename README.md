@@ -6,7 +6,7 @@
     ```
 2. Add it to your `ecs.php` file:
     ```php
-    use CodelyTv\CodingStyle;
+    use Shared\\Infrastructure\\CodingStyle;
     use Symplify\EasyCodingStandard\Config\ECSConfig;
 
     return function (ECSConfig $ecsConfig): void {
