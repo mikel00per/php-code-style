@@ -1,18 +1,18 @@
 {
-    "name": "codelytv/coding-style",
-    "description": "PHP Coding Style rules we use in Codely",
+    "name": "mikelooper/coding-style",
+    "description": "PHP Coding Style rules",
     "type": "library",
     "keywords": ["static analysis", "code style"],
-    "license": "AGPL-3.0-or-later",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Codely",
-            "homepage": "https://codely.com"
+            "name": "A. Miguel Morillo",
+            "email": "mike@l00per.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "CodelyTv\\": "src/"
+            "Shared\\Infraestructure\\CodeStyle\\": "src/"
         }
     },
     "require": {
