@@ -1,6 +1,6 @@
 {
     "name": "mikelooper/code-style",
-    "description": "PHP Coding Style rules",
+    "description": "PHP Code Style rules",
     "type": "library",
     "keywords": ["static analysis", "code style"],
     "license": "MIT",
@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Shared\\Infraestructure\\CodeStyle\\": "src/"
+            "Shared\\Infrastructure\\CodeStyle\\": "src/"
         }
     },
     "require": {
