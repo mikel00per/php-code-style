@@ -1,5 +1,5 @@
 {
-    "name": "mikelooper/coding-style",
+    "name": "mikelooper/code-style",
     "description": "PHP Coding Style rules",
     "type": "library",
     "keywords": ["static analysis", "code style"],
