@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv;
+namespace Shared\Infrastructure\CodeStyle;
 
 final class CodingStyle
 {
