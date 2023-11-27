@@ -31,6 +31,9 @@ use PhpCsFixer\Fixer\Import\FullyQualifiedStrictTypesFixer;
 use PhpCsFixer\Fixer\Import\GlobalNamespaceImportFixer;
 use PhpCsFixer\Fixer\Import\NoLeadingImportSlashFixer;
 use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
+use PhpCsFixer\Fixer\Import\OrderedImportsFixer;
+use PhpCsFixer\Fixer\NamespaceNotation\BlankLineAfterNamespaceFixer;
+use PhpCsFixer\Fixer\NamespaceNotation\BlankLinesBeforeNamespaceFixer;
 use PhpCsFixer\Fixer\Operator\AssignNullCoalescingToCoalesceEqualFixer;
 use PhpCsFixer\Fixer\Operator\NoUselessConcatOperatorFixer;
 use PhpCsFixer\Fixer\Operator\NoUselessNullsafeOperatorFixer;
@@ -42,10 +45,12 @@ use PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertInternalTypeFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitExpectationFixer;
 use PhpCsFixer\Fixer\PhpUnit\PhpUnitMethodCasingFixer;
+use PhpCsFixer\Fixer\Semicolon\SpaceAfterSemicolonFixer;
 use PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer;
 use PhpCsFixer\Fixer\Strict\StrictComparisonFixer;
 use PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer;
 use PhpCsFixer\Fixer\Whitespace\ArrayIndentationFixer;
+use PhpCsFixer\Fixer\Whitespace\NoTrailingWhitespaceFixer;
 use PhpCsFixer\Fixer\Whitespace\StatementIndentationFixer;
 use PhpCsFixer\Fixer\Whitespace\TypeDeclarationSpacesFixer;
 use PhpCsFixer\Fixer\Whitespace\TypesSpacesFixer;
@@ -59,11 +64,16 @@ return static function (ECSConfig $ecsConfig): void {
 	$ecsConfig->sets([SetList::PSR_12]);
 
 	$ecsConfig->rules([
+        // Namespaces
+        BlankLinesBeforeNamespaceFixer::class,
+        BlankLineAfterNamespaceFixer::class,
 		// Imports
 		NoUnusedImportsFixer::class,
 		FullyQualifiedStrictTypesFixer::class,
 		GlobalNamespaceImportFixer::class,
 		NoLeadingImportSlashFixer::class,
+		NoLeadingImportSlashFixer::class,
+        OrderedImportsFixer::class,
 		// Arrays
 		TrimArraySpacesFixer::class,
 		ArrayIndentationFixer::class,
@@ -75,6 +85,8 @@ return static function (ECSConfig $ecsConfig): void {
 		CastSpacesFixer::class,
 		TypeDeclarationSpacesFixer::class,
 		TypesSpacesFixer::class,
+        NoTrailingWhitespaceFixer::class,
+        SpaceAfterSemicolonFixer::class,
 		// Casing
 		ClassReferenceNameCasingFixer::class,
 		LowercaseStaticReferenceFixer::class,
@@ -124,5 +136,5 @@ return static function (ECSConfig $ecsConfig): void {
 	$ecsConfig->ruleWithConfiguration(PhpUnitMethodCasingFixer::class, ['case' => PhpUnitMethodCasingFixer::SNAKE_CASE]);
 	$ecsConfig->ruleWithConfiguration(OrderedTypesFixer::class, ['null_adjustment' => 'always_last']);
 
-	$ecsConfig->indentation(Option::INDENTATION_TAB);
+	$ecsConfig->indentation(Option::INDENTATION_SPACES);
 };
