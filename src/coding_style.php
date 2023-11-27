@@ -72,7 +72,6 @@ return static function (ECSConfig $ecsConfig): void {
 		FullyQualifiedStrictTypesFixer::class,
 		GlobalNamespaceImportFixer::class,
 		NoLeadingImportSlashFixer::class,
-		NoLeadingImportSlashFixer::class,
         OrderedImportsFixer::class,
 		// Arrays
 		TrimArraySpacesFixer::class,
